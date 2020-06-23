@@ -6,4 +6,12 @@ const client = require('./dbConfig')
             )
     };
 
-exports.addUser = addUser
+    async function userExists(username, password) {
+        const user = await client.query(
+            `SELECT * FROM users WHERE username = '${username}' AND password = '${password}'`
+        )
+        return user
+    }
+
+    module.exports = { addUser, userExists }
+

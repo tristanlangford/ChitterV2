@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    query.addUser(req.body.username, req.body.email, req.body.email);
+    query.addUser(req.body.username, req.body.email, req.body.password);
     res.redirect('/')
 })
 
